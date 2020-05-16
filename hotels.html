@@ -10,15 +10,15 @@
       <!--Шапка-->
       <a href="index.html">
         <!--Логотип-->
-        <img src="https://via.placeholder.com/150x100" alt="">
+        <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="">
       </a>
       <nav>
         <!--Главная навигация-->
         <ul class="site-navigation">
-          <li><a href="">ИНФОРМАЦИЯ</a></li>
-          <li><a href="">ФОТО И ВИДЕО</a></li>
-          <li><a href="">КАРТА ШТАТА</a></li>
-          <li><a href="hotels.html">ГОСТИНИЦЫ</a></li>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Фото и видео</a></li>
+          <li><a href="#">Карта штата</a></li>
+          <li><a href="hotels.html">Гостинины</a></li>
         </ul>
       </nav>
     </header>
@@ -32,68 +32,88 @@
       </section>
       <section>
         <!--Результаты поиска отелей-->
-        <ul>
-          <li>
-            <img src="https://via.placeholder.com/150x100" alt=""> <!--Фото отеля-->
-            <h3>Amara Resort & Spa</h3>
-            <p>Гостиница</p>
-            <p>ОТ 4000 Р.</p>
-            <button type="button">Подробнее</button>
-            <button type="button">Забронировать</button>
-            <p class="hotel-stars">
-              <img src="https://via.placeholder.com/150x100" alt="">
-              <img src="https://via.placeholder.com/150x100" alt="">
-              <img src="https://via.placeholder.com/150x100" alt="">
-              <img src="https://via.placeholder.com/150x100" alt="">
-            </p>
-            <p class="hotel-rating">Рейтинг: 8,5</p>
-          </li>
-          <li>
-            <img src="https://via.placeholder.com/150x100" alt=""> <!--Фото отеля-->
-            <h3>Desert Quail Inn</h3>
-            <p>Мотель</p>
-            <p>ОТ 3000 Р.</p>
-            <button type="button">Подробнее</button>
-            <button type="button">Забронировать</button>
-            <p class="hotel-stars">
-              <img src="https://via.placeholder.com/150x100" alt="">
-              <img src="https://via.placeholder.com/150x100" alt="">
-              <img src="https://via.placeholder.com/150x100" alt="">
-            </p>
-            <p class="hotel-rating">Рейтинг: 8,9</p>
-          </li>
-          <li>
-            <img src="https://via.placeholder.com/150x100" alt=""> <!--Фото отеля-->
-            <h3>Villas at Poco Diablo</h3>
-            <p>Аппартаменты</p>
-            <p>ОТ 2000 Р.</p>
-            <button type="button">Подробнее</button>
-            <button type="button">Забронировать</button>
-            <p class="hotel-stars">
-              <img src="https://via.placeholder.com/150x100" alt="">
-              <img src="https://via.placeholder.com/150x100" alt="">
-            </p>
-            <p class="hotel-rating">Рейтинг: 9,2</p>
-          </li>
-        </ul>
+          <div class="hotel-wrapper">
+            <!--Отель Amara-->
+            <div class="hotel-photo-wraper">
+              <!--Фото отеля-->
+              <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="">
+            </div>
+            <div class="hotel-about-wrapper">
+              <h2>Amara Resort & Spa</h2>
+              <p>Гостиница</p>
+              <p>ОТ 4000 Р.</p>
+              <a href="#">Подробнее</a>
+              <a href="#">Забронировать</a>
+            </div>
+            <div class="hotel-class-wrapper">
+              <!--Класс отеля-->
+              <!--4 вездочки-->
+              <p class="hotel-rating">Рейтинг: 8,5</p>
+            </div>
+          </div>
+
+          <div class="hotel-wrapper">
+            <!--Отель Desert-->
+            <div class="hotel-photo-wraper">
+              <!--Фото отеля-->
+              <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="">
+            </div>
+            <div class="hotel-about-wrapper">
+              <h2>Desert Quail Inn</h2>
+              <p>Мотель</p>
+              <p>ОТ 3000 Р.</p>
+              <a href="#">Подробнее</a>
+              <a href="#">Забронировать</a>
+            </div>
+            <div class="hotel-class-wrapper">
+              <!--Класс отеля-->
+              <!--3 звездочки-->
+              <p class="hotel-rating">Рейтинг: 8,9</p>
+            </div>
+          </div>
+
+          <div class="hotel-wrapper">
+            <!--Отель Villas-->
+            <div class="hotel-photo-wraper">
+              <!--Фото отеля-->
+              <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="">
+            </div>
+            <div class="hotel-about-wrapper">
+              <h2>Villas at Poco Diablo</h2>
+              <p>Аппартаменты</p>
+              <p>ОТ 2000 Р.</p>
+              <a href="#">Подробнее</a>
+              <a href="#">Забронировать</a>
+            </div>
+            <div class="hotel-class-wrapper">
+              <!--Класс отеля-->
+              <!--2 звездочки-->
+              <p class="hotel-rating">Рейтинг: 9,2</p>
+            </div>
+          </div>
       </section>
     </main>
     <footer>
       <!--Подвал-->
-      <section>
+      <div class="contacts">
         <!--Контакты-->
-        <p>#visitSEDONA<br>ТЕЛ: +7(495) 666-01-66</p>
-      </section>
-      <section>
+        <span class="hashtag">#visitsedona</span>
+        <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
+      </div>
+      <div class="socialnw">
         <!--Соцсети-->
         <ul>
-          <li><a href=""></a></li> <!--Twitter-->
-          <li><a href=""></a></li> <!--Facebook-->
-          <li><a href=""></a></li> <!--Youtube-->
+          <li><a href="#"></a>Twitter</li>
+          <li><a href="#"></a>Facebook</li>
+          <li><a href="#"></a>Youtube</li>
         </ul>
-      </section>
+      </div>
       <!--Разработчик сайта-->
-      <p><a href="https://htmlacademy.ru/intensive/htmlcss">WEBSITE BY<img src="https://via.placeholder.com/150x100" alt="HTML Academy"></a></p>
+      <div class="site-dev">
+        <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">WEBSITE BY
+          <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="HTML Academy">
+        </a>
+      </div>
     </footer>
   </body>
 </html>

@@ -18,7 +18,7 @@
           <li><a href="#">Информация</a></li>
           <li><a href="#">Фото и видео</a></li>
           <li><a href="#">Карта штата</a></li>
-          <li><a href="hotels.html">Гостинины</a></li>
+          <li><a href="hotels.html">Гостиницы</a></li>
         </ul>
       </nav>
     </header>
@@ -26,7 +26,7 @@
       <!--Основной контент-->
       <div class="container">
         <!--Раздел приветствия-->
-        <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="">
+        <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="Добро пожаловать в Седону!">
         <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
         <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон</p>
       </div>
@@ -37,8 +37,28 @@
         <!--Раздел бронирования-->
         <h2>Заинтересовались?</h2>
         <p>Укажите предполагаемые даты поездки, и мы покажем лучшие предложения гостиниц в седоне</p>
-        <form>
+        <form action="https://echo.htmlacademy.ru" method="post">
           <!--Форма бронирования-->
+          <!-- <p>Поиск отеля в седоне</p> -->
+          <fieldset>
+            <legend>Поиск отеля в седоне</legend>
+            <p>
+              <label for="arival-date">Дата заезда:</label>
+              <input type="text" id="arival-date" name="arival" placeholder="24 апреля 2017">
+              <!--Добавить иконки календарика в css-->
+            </p>
+            <p>
+              <label for="depature-date">Дата выезда:</label>
+              <input type="text" id="depature-date" name="depature" placeholder="4 июля 2017" >
+            </p>
+            <p>
+              <label for="adult-quantity">Взрослые:</label>
+              <input type="number" id="adult-quantity" name="adult-qnt" min="0" value="2">
+              <label for="child-quantity">Дети:</label>
+              <input type="number" id="child-quantity" name="child-qnt" min="0" value="0">
+            </p>
+            <button type="submit">Найти</button>
+          </fieldset>
         </form>
       </section>
     </main>

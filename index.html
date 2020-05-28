@@ -3,86 +3,100 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>HTML Academy: Седона</title>
   </head>
-  <body>
-    <header>
-      <!--Шапка-->
-      <a href="#">
-        <!--Логотип-->
-        <img src="img/logo-sedona.svg" width="138" height="70" alt="Логотип Седоны">
-      </a>
-      <nav>
-        <!--Главная навигация-->
-        <ul class="site-navigation">
-          <li><a href="#">Информация</a></li>
-          <li><a href="#">Фото и видео</a></li>
-          <li><a href="#">Карта штата</a></li>
-          <li><a href="hotels.html">Гостиницы</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <!--Основной контент-->
-      <div class="container">
+
+  <body class="page-body">
+    <div class="page-wrapper">
+      <header class="main-header">
+        <nav class="main-navigation">
+           <!--Логотип-->
+          <a href="index.html" class="main-header-logo">
+            <img src="img/logo-sedona.svg" width="138" height="70" alt="Логотип Седоны">
+          </a>
+          <div class="main-nav-wrapper">
+            <ul class="nav-list">
+              <liclass="list-item"><a href="#">Информация</a></li>
+              <li><a href="#">Фото и видео</a></li>
+              <li><a href="#">Карта штата</a></li>
+              <li><a href="hotels.html">Гостиницы</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main class="container">
         <!--Раздел приветствия-->
-        <img src="https://via.placeholder.com/150x100" width="150" height="100" alt="Добро пожаловать в Седону!">
-        <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
-        <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон</p>
-      </div>
-      <div>
+        <div class="main-greting">
+          <div class="main-greting-background"></div>
+          <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+          <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон</p>
+        </div>
+
         <!--Раздел преимуществ-->
-      </div>
-      <section>
+        <div class="main-features">
+
+        </div>
+
         <!--Раздел бронирования-->
-        <h2>Заинтересовались?</h2>
-        <p>Укажите предполагаемые даты поездки, и мы покажем лучшие предложения гостиниц в седоне</p>
-        <form action="https://echo.htmlacademy.ru" method="post">
-          <!--Форма бронирования-->
-          <!-- <p>Поиск отеля в седоне</p> -->
-          <fieldset>
-            <legend>Поиск отеля в седоне</legend>
-            <p>
-              <label for="arival-date">Дата заезда:</label>
-              <input type="text" id="arival-date" name="arival" placeholder="24 апреля 2017">
-              <!--Добавить иконки календарика в css-->
-            </p>
-            <p>
-              <label for="depature-date">Дата выезда:</label>
-              <input type="text" id="depature-date" name="depature" placeholder="4 июля 2017" >
-            </p>
-            <p>
-              <label for="adult-quantity">Взрослые:</label>
-              <input type="number" id="adult-quantity" name="adult-qnt" min="0" value="2">
-              <label for="child-quantity">Дети:</label>
-              <input type="number" id="child-quantity" name="child-qnt" min="0" value="0">
-            </p>
-            <button type="submit">Найти</button>
-          </fieldset>
-        </form>
-      </section>
-    </main>
-    <footer>
+        <section class="main-booking">
+          <div class="main-booking-wrapper">
+            <h2>Заинтересовались?</h2>
+            <p>Укажите предполагаемые даты поездки, и мы покажем лучшие предложения гостиниц в седоне</p>
+            <button type="button">Поиск гостиницы в седоне</button>
+          </div>
+          <!--Попап форма бронирования-->
+          <form class="main-booking-form" action="https://echo.htmlacademy.ru" method="post" >
+            <fieldset>
+              <p>
+                <label for="arival-date">Дата заезда:</label>
+                <input type="text" id="arival-date" name="arival" placeholder="24 апреля 2017">
+              </p>
+              <p>
+                <label for="depature-date">Дата выезда:</label>
+                <input type="text" id="depature-date" name="depature" placeholder="4 июля 2017" >
+              </p>
+              <p>
+                <label for="adult-quantity">Взрослые:</label>
+                <input type="number" id="adult-quantity" name="adult-qnt" min="0" value="2">
+                <label for="child-quantity">Дети:</label>
+                <input type="number" id="child-quantity" name="child-qnt" min="0" value="0">
+              </p>
+              <button type="submit">Найти</button>
+            </fieldset>
+          </form>
+          <!-- Карта -->
+          <!-- <div class="map"></div> -->
+        </section>
+      </main>
+
       <!--Подвал-->
-      <div class="contacts">
+      <footer class="main-footer">
         <!--Контакты-->
-        <span class="hashtag">#visitsedona</span>
-        <a href="tel:+74956660166">тел: +7(495) 666-01-66</a>
-      </div>
-      <div class="socialnw">
+        <div class="footer-contacts">
+          <span class="hashtag">#visitsedona</span>
+          <a href="tel:+74956660166">тел: +7(495) 666-01-66</a>
+        </div>
+
         <!--Соцсети-->
-        <ul>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Youtube</a></li>
-        </ul>
-      </div>
-      <!--Разработчик сайта-->
-      <div class="site-dev">
-        <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">Website by
-          <img src="img/logo-htmlacademy.svg" width="115" height="41" alt="HTML Academy">
-        </a>
-      </div>
-    </footer>
+        <div class="footer-social">
+          <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Youtube</a></li>
+          </ul>
+        </div>
+
+        <!--Разработчик сайта-->
+        <div class="footer-copyright">
+          <span class="copyright-text">Website by</span>
+          <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">
+            <img src="img/logo-htmlacademy.svg" width="115" height="41" alt="HTML Academy">
+          </a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

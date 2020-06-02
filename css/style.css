@@ -129,7 +129,7 @@ body {
   color: var(--basic-bronzegrey);
 }
 
-.main-booking-wrapper .btn-secondary {
+.btn-secondary {
   min-width: 568px;
   min-height: 85px;
   font-family: inherit;
@@ -159,7 +159,7 @@ body {
   font-weight: bold;
 }
 
-.main-booking-form .button-primery {
+.main-booking-form .button-primary {
   min-width: 458px;
   min-height: 58px;
   font-family: inherit;
@@ -196,7 +196,7 @@ body {
   text-transform: uppercase;
 }
 
-.footer-copyright .copyright-text {
+.copyright-text {
   text-transform: uppercase;
 }
 /*Состояние логотипа пока не реализовано, надо разобраться как заливать свг цветом*/
@@ -256,12 +256,11 @@ body {
 
 .sort-list li {
   list-style: none;
-
 }
 
 /* Состояния ссылок в секции сортировки */
 /* Покой */
-.sort-list li a {
+.sort-list a {
   color: var(--basic-darkgrey);
   text-decoration: none;
   border-bottom: 1px dashed var(--basic-blue);
@@ -289,7 +288,7 @@ body {
   text-transform: uppercase;
 }
 
-.hotel-wrapper .about-details {
+.about-details {
   width: 110px;
   height: 27px;
   background-color: var(--basic-blue);
@@ -300,7 +299,7 @@ body {
   text-transform: uppercase;
   color: var(--basic-white);
 }
-.hotel-wrapper .about-booking {
+.about-booking {
   width: 142px;
   height: 27px;
   background-color: var(--basic-darkbrown);

@@ -43,25 +43,29 @@ html {
 body {
   margin: 0px;
   padding: 0px;
+  height: 100%;
   background-color: var(--basic-grey);
   font-family: "PT Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
   color: var(--basic-black);
-  /* grid */
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
 }
 
-.page-wrapper {
+/* Grid */
+.page-grid-layout {
   width: 1200px;
   margin: 0 auto;
-  position: relative;
+  display: grid;
+  grid-template-columns: 73px 127px 200px 200px 200px 200px 127px 73px;
   background-color: var(--basic-white);
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+}
+
+.main-header,
+.main-content,
+.main-footer {
+  grid-column: 1/-1;
 }
 
 .visually-hidden {
@@ -80,7 +84,7 @@ body {
 /* ВОПРОСЫ:
 1. Какому элементу шапки лучше задавать min-height? (header, nav, или ul)
 2. Лого необходимо позиционировать абсолютно? можно дать маргин минус половина картинки?
-3. При увеличении маштаба ползет навигация (фото и видео подлазиет под лого.
+3. При увеличении маштаба ползет навигация (фото и видео подлазиет под лого).
 */
 .main-navigation {
   min-height: 57px;
@@ -144,10 +148,10 @@ body {
 /* ****************** greeting section ****************** */
 /* ВОПРОСЫ:
 1. Для .greeting-accent можно задать ширину параграфа или ужать контент паддингами/маргинами?
-2. А вообще законно задавать width в процекнтах с точкой?
+2. А вообще законно задавать width в процекнтах с точкой(float)?
 3. Нужны ли здесь флексы??
-
 */
+
 .main-greeting {
   width: 100%;
   display: flex;
@@ -176,7 +180,7 @@ body {
 .main-greeting p {
   width: 100%;
   margin: 0;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
   color: var(--basic-bronzegrey);
@@ -185,10 +189,12 @@ body {
 .main-greeting .greeting-accent {
   /* width: 470px; или 470/1200=39,16%  */
   width: 39.16%;
-  padding-top: 60px;
+  padding-top: 42px;
   padding-bottom: 28px;
+  margin-bottom: 16px;
   font-size: 21px;
   font-weight: bold;
+  text-align: center;
   color: var(--basic-black);
 }
 
@@ -212,10 +218,8 @@ body {
   /* Flex container */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: stretch;
-
-
   text-transform: uppercase;
   color: var(--basic-white);
   background-color: var(--basic-blue);
@@ -223,16 +227,23 @@ body {
 
 .feature-content h2 {
   font-size: 21px;
+  line-height: 21px;
   font-weight: bold;
   text-align: center;
+  margin: 0;
+  margin-bottom: 27px;
+  padding-top: 47px;
   padding-left: 25%;
   padding-right: 25%;
 }
 
 .feature-content p {
+  line-height: 21px;
   text-align: center;
-  padding-left: 15%;
-  padding-right: 15%;
+  margin: 0;
+  margin-bottom: 25px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .feature-photo {
@@ -375,12 +386,18 @@ body {
   min-width: 100%;
   min-height: 593px;
   background-color: var(--basic-grey);
+  background-image: url("../img/sedona-map.jpg");
+  background-size: 1200px 593px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Попап */
 .main-booking-form {
   min-width: 568px;
   min-height: 395px;
+  position: absolute;
+  margin: 0 auto;
   background-color: var(--basic-white);
   text-transform: uppercase;
 }
@@ -410,13 +427,16 @@ body {
 /* ****************** footer section ****************** */
 /*footer global*/
 .main-footer {
-  position: absolute;
   width: 100%;
-  top: 2625px;
+  bottom: 0px;
+  height: 120px;
   display: flex;
   flex-direction: row;
-  min-height: 120px;
   background-color: var(--basic-transwhite);
+}
+
+.map-footer {
+  margin-top: -120px;
 }
 
 .main-footer div {
@@ -516,6 +536,9 @@ body {
 /* ВОПРОСЫ:
 1. Как задать положение кнопок сортировки? отступом/задать абсолютное позиционирование?/добавить обертку с флекс-эндом?
 */
+
+
+
 
 .main-filter {
   width: 100%;

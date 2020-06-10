@@ -9,8 +9,7 @@
   </head>
 
   <body>
-    <div class="page-wrapper">
-
+    <div class="page-grid-layout">
       <!-- Main header -->
       <header class="main-header">
         <nav class="main-navigation">
@@ -27,12 +26,12 @@
         </nav>
       </header>
 
-      <main class="container">
+      <main class="main-content">
         <!--Раздел приветствия-->
         <div class="main-greeting">
           <div class="main-greeting-background"></div>
           <h1 class="visually-hidden">Добро пожаловать в Седону!</h1>
-          <p class="greeting-accent">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
+          <p class="greeting-accent">Седона &ndash; небольшой городок в Аризоне, заслуживающий большего!</p>
           <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон</p>
         </div>
 
@@ -41,8 +40,8 @@
           <div class="feature-major">
             <div class="feature-content">
               <h2>Настоящий городок</h2>
-              <p>- №1 -</p>
-              <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
+              <p>&ndash; №1 &ndash;</p>
+              <p>Седона &ndash; не аттракцион для туристов, там течет своя жизнь</p>
             </div>
             <div class="feature-photo"></div>
           </div>
@@ -72,7 +71,7 @@
           <div class="feature-major second-feature">
             <div class="feature-content">
               <h2>Там есть мост дьявола</h2>
-              <p>- №2 -</p>
+              <p>&ndash; №2 &ndash;</p>
               <p>Да, по нему можно пройтись! Если конечно вы осмелитесь</p>
             </div>
             <div class="feature-photo"></div>
@@ -80,17 +79,17 @@
           <div class="feature-minor">
             <div class="minor-square">
               <h2>Небольшая площадь</h2>
-              <p class="minor-number">- №3 -</p>
+              <p class="minor-number">&ndash; №3 &ndash;</p>
               <p>Все достопримечательности находятся очень близко</p>
             </div>
             <div class="minor-road">
               <h2>Красивая дорога</h2>
-              <p class="minor-number">- №4 -</p>
+              <p class="minor-number">&ndash; №4 &ndash;</p>
               <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
             </div>
             <div class="minor-tourist">
               <h2>Мало туристов</h2>
-              <p class="minor-number">- №5 -</p>
+              <p class="minor-number">&ndash; №5 &ndash;</p>
               <p class="tourist-item">Большинство едет в Гранд Каньон и толпится там</p>
             </div>
           </div>
@@ -105,7 +104,7 @@
             <button class="btn-secondary" type="button">Поиск гостиницы в седоне</button>
           </div>
           <!--Попап форма бронирования-->
-          <!-- <form class="main-booking-form" action="https://echo.htmlacademy.ru" method="post" >
+          <!-- <form class="main-booking-form" action="https://echo.htmlacademy.ru" method="post">
             <fieldset>
               <p>
                 <label for="arival-date">Дата заезда:</label>
@@ -125,12 +124,15 @@
             </fieldset>
           </form> -->
           <!-- Карта -->
-          <div class="booking-map"></div>
+          <div class="booking-map">
+            <!--При вставке карты в хроме скрывается футер??? в сафари норм.-->
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1046092.9843436746!2d-111.97427107958724!3d34.8709322574877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1591820547536!5m2!1sru!2sru" width="1200" height="593" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
+          </div>
         </section>
       </main>
 
       <!--Подвал-->
-      <footer class="main-footer">
+      <footer class="main-footer map-footer">
         <!--Контакты-->
         <div class="footer-contacts">
           <span class="hashtag">#visitsedona</span>

@@ -35,7 +35,7 @@
 
 }
 
-/* ****************** global ****************** */
+/* * * global * * */
 html {
   height: 100%;
 }
@@ -62,10 +62,8 @@ body {
   box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
 }
 
-.main-header,
-.main-content,
-.main-footer {
-  grid-column: 1/-1;
+.page-grid-element {
+  grid-column: 1 / -1;
 }
 
 .visually-hidden {
@@ -79,30 +77,23 @@ body {
   overflow: hidden;
 }
 
-/* ********************* main page styles ********************* */
-/* ****************** main header ****************** */
-/* ВОПРОСЫ:
-1. Какому элементу шапки лучше задавать min-height? (header, nav, или ul)
-2. Лого необходимо позиционировать абсолютно? можно дать маргин минус половина картинки?
-3. При увеличении маштаба ползет навигация (фото и видео подлазиет под лого).
-*/
+/* * * *** main page styles * * *** */
+/* * * main header * * */
 .main-navigation {
-  min-height: 57px;
+  position: relative;
 }
 
 .main-header-logo {
   position: absolute;
   top: 0px;
   left: 50%;
-  margin-left: -69px;
-
+  transform: translateX(-50%);
 }
 
 .nav-list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  min-height: 57px;
   align-items: center;
   margin: 0;
   padding-left: 5%;
@@ -111,16 +102,16 @@ body {
 
 .nav-list li {
   width: 25%;
+  padding-top: 15px;
+  padding-bottom: 15px;
   list-style-type: none;
 }
 
-.nav-item-first,
-.nav-item-second {
+.nav-item-left {
   text-align: left;
 }
 
-.nav-item-third,
-.nav-item-fourth {
+.nav-item-right {
   text-align: right;
 }
 /* Состояния ссылок в шапке */
@@ -133,24 +124,21 @@ body {
 }
 /* Наведение */
 .nav-list a:hover {
+  transition: color 0.3s;
   color: var(--basic-blue);
 }
 
 /* Нажатие */
 .nav-list a:active {
+  transition: color 0.3s;
   color: var(--basic-black);
   opacity: 0.3;
 }
 /* Активный */
-.active-item a{
+.active-item a {
   color: var(--basic-darkbrown);
 }
-/* ****************** greeting section ****************** */
-/* ВОПРОСЫ:
-1. Для .greeting-accent можно задать ширину параграфа или ужать контент паддингами/маргинами?
-2. А вообще законно задавать width в процекнтах с точкой(float)?
-3. Нужны ли здесь флексы??
-*/
+/* * * greeting section * * */
 
 .main-greeting {
   width: 100%;
@@ -178,8 +166,8 @@ body {
 }
 
 .main-greeting p {
-  width: 100%;
-  margin: 0;
+  max-width: 100%;
+  margin: 0 auto;
   padding-bottom: 50px;
   text-align: center;
   text-transform: uppercase;
@@ -187,8 +175,7 @@ body {
 }
 
 .main-greeting .greeting-accent {
-  /* width: 470px; или 470/1200=39,16%  */
-  width: 39.16%;
+  width: 470px;
   padding-top: 42px;
   padding-bottom: 28px;
   margin-bottom: 16px;
@@ -198,12 +185,7 @@ body {
   color: var(--basic-black);
 }
 
-/* ****************** advantege section ****************** */
-/* ВОПРОСЫ:
-1. Как правильно центрировать текст в параграфах? в плане задается ширина в процентах или паддинги?
-2. Читал что маргины лучше ставить с низу и справа? Нужно ли придерживаться этого метода? иногда для того чтобы задать маргин
-снизу нужно добавть класс к параграфу например, либо можно сделать марген вверх и обойтись без доп класса.
-*/
+/* * * advantege section * * */
 /* Feature major block */
 .feature-major {
   /* Flex container */
@@ -214,12 +196,12 @@ body {
 
 .feature-content {
   min-width: 400px;
-  min-height: 100%;
   /* Flex container */
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: stretch;
+  line-height: 21px;
   text-transform: uppercase;
   color: var(--basic-white);
   background-color: var(--basic-blue);
@@ -238,7 +220,6 @@ body {
 }
 
 .feature-content p {
-  line-height: 21px;
   text-align: center;
   margin: 0;
   margin-bottom: 25px;
@@ -342,10 +323,7 @@ body {
   padding-right: 18%;
 }
 
-/* ****************** booking section ****************** */
-/* ВОПРОСЫ:
-1. в параграфе первая строка короче второй, разбить на два параграфа? добавить спан? бр?
-*/
+/* * * booking section * * */
 .main-booking-wrapper {
   text-transform: uppercase;
   text-align: center;
@@ -357,17 +335,13 @@ body {
   font-weight: bold;
   line-height: 36px;
   margin: 0;
-  margin-bottom: 25px;
-}
-
-.main-booking-wrapper p {
-  color: var(--basic-bronzegrey);
-  margin: 0;
+  margin-bottom: 30px;
 }
 
 .main-booking .booking-item {
   margin: 0;
   margin-bottom: 30px;
+  color: var(--basic-bronzegrey);
 }
 
 .main-booking-wrapper .btn-secondary {
@@ -424,7 +398,7 @@ body {
   color: var(--basic-white);
 }
 
-/* ****************** footer section ****************** */
+/* * * footer section * * */
 /*footer global*/
 .main-footer {
   width: 100%;
@@ -531,8 +505,8 @@ body {
   fill: var(--basic-blackgrey);
 }
 
-/* ********************* hotels page styles ********************* */
-/* ****************** filter section ****************** */
+/* * * *** hotels page styles * * *** */
+/* * * filter section * * */
 /* ВОПРОСЫ:
 1. Как задать положение кнопок сортировки? отступом/задать абсолютное позиционирование?/добавить обертку с флекс-эндом?
 */
@@ -590,7 +564,7 @@ body {
   background-color: var(--basic-white);
 }
 
-/* ****************** sort section ****************** */
+/* * * sort section * * */
 .main-sort {
   font-family: inherit;
   font-size: 12px;
@@ -684,7 +658,7 @@ body {
   fill: var(--basic-blue);
 }
 
-/* ****************** result section ****************** */
+/* * * result section * * */
 .main-results {
   display: flex;
   flex-direction: column;

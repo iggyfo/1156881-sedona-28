@@ -17,16 +17,16 @@
           </a>
           <ul class="nav__list">
             <li class="nav__item"><a class="header__link" href="#">Информация</a></li>
-            <li class="nav__item nav__item--margin"><a class="header__link" href="#">Фото и видео</a></li>
+            <li class="nav__item"><a class="header__link" href="#">Фото и видео</a></li>
             <li class="nav__item nav__item--right"><a class="header__link" href="#">Карта штата</a></li>
-            <li class="nav__item nav__item--right"><a class="header__link" href="hotels.html">Гостиницы</a></li>
+            <li class="nav__item nav__item--right"><a class="header__link header__link--active" href="hotels.html">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
       <main class="main">
-        <form class="filter-form" action="https://echo.htmlacademy.ru" method="post">
+        <form class="filter" action="https://echo.htmlacademy.ru" method="post">
           <h1 class="visually-hidden">Критерии поиска отелей в городке Седона</h1>
-          <fieldset class="filter-column">
+          <fieldset class="filter__column">
             <legend class="filter__title">Инфраструктура:</legend>
             <ul class="filter__list">
               <li class="filter__item">
@@ -49,7 +49,7 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="filter-column">
+          <fieldset class="filter__column">
             <legend class="filter__title">Тип жилья:</legend>
             <ul class="filter__list">
               <li class="filter__item">
@@ -72,25 +72,25 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="filter-column filter-column--right">
+          <fieldset class="cost">
             <legend class="cost__title">Стоимость в сутки (Р):</legend>
             <div class="cost-controls">
-              <label class="cost__label cost__label--stick" for="cost-min">от
-                <input type="text" name="cost-min" id="cost-min" class="cost__value" value="0">
+              <label class="cost-controls__label cost-controls__label--stick" for="cost-min">от
+                <input type="text" name="cost-min" id="cost-min" class="cost-controls__value" value="0">
               </label>
-              <label class="cost__label" for="cost-max" >до
-                <input type="text" name="cost-max" id="cost-max" class="cost__value" value="3000">
+              <label class="cost-controls__label" for="cost-max" >до
+                <input type="text" name="cost-max" id="cost-max" class="cost-controls__value" value="3000">
               </label>
             </div>
-            <div class="range-filter">
+            <div class="range">
               <div class="range-controls">
-                <div class="range__scale">
-                  <div class="range__bar"></div>
+                <div class="range-controls__scale">
+                  <div class="range-controls__bar"></div>
                 </div>
-                <div class="range__toggle range__toggle--min"></div>
-                <div class="range__toggle range__toggle--max"></div>
+                <div class="range-controls__toggle range-controls__toggle--min"></div>
+                <div class="range-controls__toggle range-controls__toggle--max"></div>
               </div>
-              <button class="filter-form__btn">Показать</button>
+              <button class="filter-btn">Показать</button>
             </div>
           </fieldset>
         </form>
@@ -117,7 +117,7 @@
           <div class="hotel__photo">
             <img class="hotel__img" src="img/amara-resort-and-spa.jpg" width="135" height="90" alt="Отель Amara">
           </div>
-          <div class="hotel-wrapper">
+          <div class="hotel__wrapper">
             <h2 class="hotel__title"><a href="#" class="hotel__title-link">Amara Resort & Spa</a></h2>
             <div class="hotel__row">
               <div class="hotel__column">
@@ -154,7 +154,7 @@
           <div class="hotel__photo">
             <img class="hotel__img" src="img/desert-quail-inn.jpg" width="135" height="90" alt="Отель Desert">
           </div>
-          <div class="hotel-wrapper">
+          <div class="hotel__wrapper">
             <h2 class="hotel__title"><a href="#" class="hotel__title-link">Desert Quail Inn</a></h2>
             <div class="hotel__row">
               <div class="hotel__column">
@@ -188,7 +188,7 @@
           <div class="hotel__photo">
             <img class="hotel__img" src="img/villas-at-poco-diablo.jpg" width="135" height="90" alt="Отель Villas">
           </div>
-          <div class="hotel-wrapper">
+          <div class="hotel__wrapper">
             <h2 class="hotel__title"><a href="#" class="hotel__title-link">Villas at Poco Diablo</a></h2>
             <div class="hotel__row">
               <div class="hotel__column">

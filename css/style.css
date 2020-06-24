@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 10 version
-*/
-
 @font-face {
   font-family: "PT Sans";
   src: url("../fonts/ptsans.woff2") format("woff2"),
@@ -18,14 +11,13 @@
   src: url("../fonts/ptsansbold.woff2") format("woff2"),
   url("../fonts/ptsansbold.woff") format("woff");
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
 }
 
 :root {
   --basic-black:#000000; /* black text color */
   --basic-bronzegrey:#333333; /* paragraph text color */
   --basic-white:#ffffff; /* white text and bg color */
-
   --basic-grey:#f2f2f2; /* main bg color*/
   --basic-brown: #766357; /* legend in popap*/
   --basic-blue: #81b3d2; /*button color*/
@@ -47,7 +39,6 @@
   --basic-darkwhite: #ebebeb; /*hover in booking form*/
   --basic-background-color: #6996cb; /*when bg picture is'n load*/
   --basic-darkdarkgrey: #6a6a6a; /*disabled chexbox text in filter-hotels*/
-
 }
 
 /* * * global * * */
@@ -56,8 +47,8 @@ html {
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   height: 100%;
   background-color: var(--basic-grey);
   font-family: "PT Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
@@ -71,8 +62,7 @@ body {
   width: 1200px;
   margin: 0 auto;
   background-color: var(--basic-white);
-  -webkit-box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
-          box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
 .visually-hidden {
@@ -96,16 +86,12 @@ body {
 
 .logo {
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -142,25 +128,24 @@ body {
   color: var(--basic-black);
   text-decoration: none;
 }
+
 /* Наведение */
-.header__link:hover {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
+.header__link:not(.header__link--active):hover {
   transition: color 0.3s;
   color: var(--basic-blue);
 }
 
 /* Нажатие */
-.header__link:active {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
+.header__link:not(.header__link--active):active {
   transition: color 0.3s;
   color: var(--basic-black);
   opacity: 0.3;
 }
+
 /* Активный */
 .header__link--active {
   color: var(--basic-darkbrown);
+  cursor: default;
 }
 
 /* * * greeting section * * */
@@ -227,7 +212,7 @@ body {
 .features {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (400px)[3];
+  -ms-grid-columns: 400px 400px 400px;
   grid-template-columns: repeat(3, 400px);
 }
 
@@ -302,13 +287,13 @@ body {
 .feature__photo--square {
   background-image: url("../img/sedona-central-square.jpg");
   background-color: var(--basic-blackgrey);
-  background-size: cover;
+  background-size: contain;
 }
 
 .feature__photo--bridge {
   background-image: url("../img/evils-bridge.jpg");
   background-color: var(--basic-blackgrey);
-  background-size: cover;
+  background-size: contain;
 }
 
 .feature--icon {
@@ -375,15 +360,11 @@ body {
 }
 
 .booking__btn:hover {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   background-color: var(--basic-purebrown);
 }
 
 .booking__btn:active {
-  -webkit-transition: background-color 0.3s, color 0.2s;
-  -o-transition: background-color 0.3s, color 0.2s;
   transition: background-color 0.3s, color 0.2s;
   background-color: var(--basic-blackbrown);
   color: var(--bacic-doublegrey);
@@ -395,12 +376,9 @@ body {
   width: 458px;
   padding: 55px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   background: var(--basic-white);
-  -webkit-box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
-          box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
   z-index: 103000;
   -webkit-animation: bounce 1s;
           animation: bounce 1s;
@@ -450,11 +428,13 @@ body {
   background-color: var(--basic-grey);
 }
 
-.form__input:hover {
+.form__input:hover,
+.number__input:hover {
   background-color: var(--basic-darkwhite);
 }
 
-.form__input:focus {
+.form__input:focus,
+.number__input:focus {
   background-color: var(--basic-white);
 }
 
@@ -478,7 +458,7 @@ body {
   color: var(--basic-black);
 }
 
-.form__btn {
+.form__calendar-btn {
   position: absolute;
   top: 7px;
   right: 7px;
@@ -536,15 +516,14 @@ body {
   fill: var(--basic-darkgreylight);
 }
 
-.form__icon:hover path {
-  -webkit-transition: fill 0.3s;
-  -o-transition: fill 0.3s;
+.number__btn:hover path,
+.form__calendar-btn:hover path {
   transition: fill 0.3s;
   fill: var(--basic-black);
 }
-.form__icon:active path {
-  -webkit-transition: fill 0.3s;
-  -o-transition: fill 0.3s;
+
+.number__btn:active path,
+.form__calendar-btn:active path {
   transition: fill 0.3s;
   fill: var(--basic-blue);
 }
@@ -563,15 +542,11 @@ body {
 }
 
 .booking-form__btn:hover {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   background-color: var(--basic-darkblue);
 }
 
 .booking-form__btn:active {
-  -webkit-transition: background-color 0.3s, color 0.2s;
-  -o-transition: background-color 0.3s, color 0.2s;
   transition: background-color 0.3s, color 0.2s;
   background-color: var(--basic-darkblue);
   color: var(--basic-blue);
@@ -692,26 +667,19 @@ body {
   height: 48px;
   margin-right: 6px;
   background-color: var(--basic-blue);
-  color: inherit;
 }
 
 .social__btn:hover {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   background-color: var(--basic-darkblue);
 }
 
 .social__btn:active {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   background-color: var(--basic-darkblue);
 }
 
 .social__btn:active path {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   fill-opacity: 0.3;
   background-color: var(--basic-darkblue);
@@ -766,7 +734,7 @@ body {
   background-size: 1200px 217px;
   background-repeat: no-repeat;
   background-color: var(--basic-background-color);
-  background-size: cover;
+  background-size: contain;
 }
 
 .filter__column {
@@ -824,8 +792,8 @@ body {
   position: absolute;
   width: 26px;
   height: 26px;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
 }
 
 .filter__checkbox:checked + .filter__text::before {
@@ -842,6 +810,7 @@ body {
 
 .filter__checkbox:disabled + .filter__text {
   color: var(--basic-darkdarkgrey);
+  cursor: default;
 }
 
 .cost {
@@ -896,9 +865,7 @@ body {
   height: 22px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   background-color: var(--basic-white);
 }
 
@@ -907,7 +874,7 @@ body {
   background: none;
   border: none;
   color: inherit;
-  margin: 0px;
+  margin: 0;
 }
 
 .range {
@@ -950,12 +917,11 @@ body {
   left: 80%;
 }
 
-.range-controls__toggle:hover {
+.range-controls__toggle:hover,
+.range-controls__toggle:focus {
   background-image: url("../img/filter-button-hover.svg");
   background-repeat: no-repeat;
-  -webkit-transform: translateX(-10%);
-      -ms-transform: translateX(-10%);
-          transform: translateX(-10%);
+  transform: translateX(-10%);
 }
 
 .filter-btn {
@@ -973,16 +939,13 @@ body {
 }
 
 .filter-btn:hover {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
   transition: color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   color: var(--basic-black);
   background-color: var(--basic-white);
 }
-/* ****************** sort section ****************** */
+
+/* * * sort section * * */
 .sort {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1047,30 +1010,24 @@ body {
 
 /* Наведение */
 .sort__link:hover {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
   transition: color 0.3s;
   color: var(--basic-blue);
 }
 
 /* Активный */
 .sort__link:active {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
   transition: color 0.3s;
   color: var(--basic-black);
   border: none;
 }
 
-.sort__item--active {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
+.sort__link--active {
   transition: color 0.3s;
   color: var(--basic-blue);
   border: none;
 }
 
-.sort-btns__wrapper {
+.sort-btns {
   margin-left: auto;
   display: inline-block;
   vertical-align: middle;
@@ -1080,43 +1037,37 @@ body {
   line-height: 10px;
 }
 
-.sort__btn {
+.sort-btns__btn {
   padding: 0;
   margin-right: 12px;
   background-color: initial;
-  border: 0px;
+  border: 0;
 }
 
 /* Состояния кнопок в секции сортировки */
 /* Наведение */
-.sort__btn:hover path {
-  -webkit-transition: fill 0.3s;
-  -o-transition: fill 0.3s;
+.sort-btns__btn:hover path {
   transition: fill 0.3s;
   fill: var(--basic-black);
 }
 
 /* Нажатие */
-.sort__btn:active path {
-  -webkit-transition: fill 0.3s;
-  -o-transition: fill 0.3s;
+.sort-btns__btn:active path {
   transition: fill 0.3s;
   fill: var(--basic-blue);
 }
 
-.sort__btn--active {
+.sort-btns__btn--active {
   margin-right: 0;
 }
+
 /* Активный */
-.sort__btn--active path {
-  -webkit-transition: fill 0.3s;
-  -o-transition: fill 0.3s;
+.sort-btns__btn--active path {
   transition: fill 0.3s;
   fill: var(--basic-blue);
 }
 
-/* ****************** result section ****************** */
-
+/* * *  result section * * */
 .hotel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1130,7 +1081,6 @@ body {
 
 .hotel__photo {
   margin-right: 29px;
-
 }
 
 .hotel__wrapper {
@@ -1145,7 +1095,7 @@ body {
 }
 
 .hotel__title {
-  margin: 0px;
+  margin: 0;
   line-height: 18px;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -1157,15 +1107,11 @@ body {
 }
 
 .hotel__title-link:hover {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
   transition: color 0.3s;
   color: var(--basic-blue);
 }
 
 .hotel__title-link:active {
-  -webkit-transition: color 0.3s;
-  -o-transition: color 0.3s;
   transition: color 0.3s;
   color: var(--basic-darkgrey);
 }
@@ -1215,15 +1161,11 @@ body {
 }
 
 .hotel__link--secondary:hover {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   background-color: var(--basic-darkblue);
 }
 
 .hotel__link--secondary:active {
-  -webkit-transition: background-color 0.3s, color 0.2s;
-  -o-transition: background-color 0.3s, color 0.2s;
   transition: background-color 0.3s, color 0.2s;
   background-color: var(--basic-darkblue);
   color: var(--basic-blue);
@@ -1234,15 +1176,11 @@ body {
 }
 
 .hotel__link--primary:hover {
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
   transition: background-color 0.3s;
   background-color: var(--basic-purebrown);
 }
 
 .hotel__link--primary:active {
-  -webkit-transition: background-color 0.3s, color 0.2s;
-  -o-transition: background-color 0.3s, color 0.2s;
   transition: background-color 0.3s, color 0.2s;
   background-color: var(--basic-blackbrown);
   color: var(--bacic-doublegrey);
@@ -1284,64 +1222,54 @@ body {
 }
 
 /* Animations */
-
 @-webkit-keyframes bounce {
 0% {
   opacity: 0;
-  -webkit-transform: translateX(-2000%);
-          transform: translateX(-2000%)
+  transform: translateX(-2000%)
 }
 
 40% {
   opacity: 0.3;
-  -webkit-transform: translateX(-30%);
-          transform: translateX(-30%)
+  transform: translateX(-30%)
 }
 
 80% {
   opacity: 0.7;
-  -webkit-transform: translateX(-60%);
-          transform: translateX(-60%)
+  transform: translateX(-60%)
 }
 
 100% {
   opacity: 1;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%)
+  transform: translateX(-50%)
 }
 }
 
 @keyframes bounce {
 0% {
   opacity: 0;
-  -webkit-transform: translateX(-2000%);
-          transform: translateX(-2000%)
+  transform: translateX(-2000%)
 }
 
 40% {
   opacity: 0.3;
-  -webkit-transform: translateX(-30%);
-          transform: translateX(-30%)
+  transform: translateX(-30%)
 }
 
 80% {
   opacity: 0.7;
-  -webkit-transform: translateX(-60%);
-          transform: translateX(-60%)
+  transform: translateX(-60%)
 }
 
 100% {
   opacity: 1;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%)
+  transform: translateX(-50%)
 }
 }
 
 @-webkit-keyframes shake {
 0%,
 100% {
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 10%,
@@ -1349,24 +1277,21 @@ body {
 50%,
 70%,
 90% {
-  -webkit-transform: translateX(-51%);
-          transform: translateX(-51%);
+  transform: translateX(-51%);
 }
 
 20%,
 40%,
 60%,
 80% {
-  -webkit-transform: translateX(-49%);
-          transform: translateX(-49%);
+  transform: translateX(-49%);
 }
 }
 
 @keyframes shake {
 0%,
 100% {
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 10%,
@@ -1374,16 +1299,13 @@ body {
 50%,
 70%,
 90% {
-  -webkit-transform: translateX(-51%);
-          transform: translateX(-51%);
+  transform: translateX(-51%);
 }
 
 20%,
 40%,
 60%,
 80% {
-  -webkit-transform: translateX(-49%);
-          transform: translateX(-49%);
+  transform: translateX(-49%);
 }
 }
-

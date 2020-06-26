@@ -273,13 +273,13 @@ body {
 
 .feature__photo--square {
   background-image: url("../img/sedona-central-square.jpg");
-  background-color: var(--basic-blackgrey);
+  background-color: var(--basic-blue);
   background-size: contain;
 }
 
 .feature__photo--bridge {
   background-image: url("../img/evils-bridge.jpg");
-  background-color: var(--basic-blackgrey);
+  background-color: var(--basic-blue);
   background-size: contain;
 }
 

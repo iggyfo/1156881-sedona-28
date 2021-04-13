@@ -6,3 +6,5 @@ ___
 
 Использованы технологии:
 HTML, CSS, Autoprefixer, JS (ES2015).
+
+GH-pages: https://iggyfo.github.io/sedona-28/

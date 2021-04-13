@@ -1,11 +1,9 @@
-var searchButton = document.querySelector(".booking__btn");
-var submitButton = document.querySelector(".booking-form__btn")
-var form = document.querySelector(".booking-form");
-var formInputIn = form.querySelector(".form__input-in");
-var forminputOut = form.querySelector(".form__input-out")
+const searchButton = document.querySelector(".booking__btn");
+const form = document.querySelector(".booking-form");
+const formInputIn = form.querySelector(".form__input-in");
+const formInputOut = form.querySelector(".form__input-out")
 
-var isStorageSupport = true;
-var storage = "";
+let isStorageSupport = true;
 try {
   storageIn = localStorage.getItem("date_in");
   storageOut = localStorage.getItem("date_out");
@@ -20,21 +18,20 @@ searchButton.addEventListener("click", function(evt) {
 
   if (storageIn) {
     formInputIn.value = storageIn;
-    forminputOut.focus();
+    formInputOut.focus();
   } else {
     formInputIn.focus();
   }
 })
 
 form.addEventListener("submit", function(evt) {
-  if (!formInputIn.value || !forminputOut.value) {
+  if (!formInputIn.value || !formInputOut.value) {
     evt.preventDefault();
     form.classList.remove("booking-form--error");
-    form.offsetWidth = form.offsetWidth;
     form.classList.add("booking-form--error");
   } else {
     localStorage.setItem("date-in", formInputIn.value);
-    localStorage.setItem("date-out", forminputOut.value);
+    localStorage.setItem("date-out", formInputOut.value);
   }
 })
 
